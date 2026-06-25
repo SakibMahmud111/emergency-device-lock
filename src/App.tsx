@@ -16,6 +16,7 @@ import {
   Frame10,
 } from './components/Frames';
 import { Shield, HardDrive } from 'lucide-react';
+import { LanguageToggle } from './components/LanguageToggle'; // <--- Added
 
 const STEP_TO_PATH: Record<number, string> = {
   1: '/',
@@ -66,6 +67,8 @@ const AppLayout: React.FC = () => {
       {/* Glowing accent ball */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-rose-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
+
+      {/*Modifications here*/}
       {/* Header */}
       <header className="relative z-10 border-b border-slate-900 bg-slate-950/80 backdrop-blur-md px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -80,6 +83,10 @@ const AppLayout: React.FC = () => {
           </div>
           
           <div className="flex items-center gap-3">
+            
+            {/* INJECTED GLOBALLY HERE */}
+            <LanguageToggle />
+            
             <div className="hidden sm:flex items-center gap-2 bg-slate-900 border border-slate-800 rounded-full px-3.5 py-1.5 text-xs text-slate-400 font-medium">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               Demo Mode Active

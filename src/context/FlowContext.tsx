@@ -17,6 +17,8 @@ interface FlowContextType {
   currentStep: number;
   userProfile: UserProfile | null;
   errorMsg: string | null;
+  language: 'en' | 'bn'; // <-- Added
+  setLanguage: (lang: 'en' | 'bn') => void; // <-- Added
   navigateToStep: (step: number) => void;
   setUserProfile: (profile: UserProfile | null) => void;
   setErrorMsg: (msg: string | null) => void;
@@ -54,7 +56,7 @@ export const FlowProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   // FIXED: Removed the useEffect hooks that were syncing step and userProfile to localStorage
-
+  const [language, setLanguage] = useState<'en' | 'bn'>('en'); // <-- Added
   const setUserProfile = (profile: UserProfile | null) => {
     setUserProfileState(profile);
   };
@@ -145,6 +147,8 @@ export const FlowProvider: React.FC<{ children: React.ReactNode }> = ({ children
         currentStep,
         userProfile,
         errorMsg,
+        language,    // <-- Added
+        setLanguage, // <-- Added
         navigateToStep,
         setUserProfile,
         setErrorMsg,
