@@ -56,11 +56,18 @@ const FlowRouteGuard: React.FC<{ step: number; children: React.ReactElement }> =
 };
 
 // Layout with header, navigation highlights and theme controls
+// const AppLayout: React.FC = () => {
+//   const { currentStep, resetFlow } = useFlow();
+
+//   return (
+//     <div className="min-h-screen bg-slate-950 flex flex-col justify-between text-slate-100 selection:bg-rose-500/20 selection:text-rose-300">
 const AppLayout: React.FC = () => {
   const { currentStep, resetFlow } = useFlow();
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col justify-between text-slate-100 selection:bg-rose-500/20 selection:text-rose-300">
+    // CHANGE THIS WRAPPER LINE TO MATCH THIS:
+    // <div className="min-h-[100dvh] w-full bg-slate-950 flex flex-col justify-between relative overflow-x-hidden text-slate-100 selection:bg-rose-500/20 selection:text-rose-300">
+    <div className="min-h-[100dvh] w-full bg-slate-900 flex flex-col justify-between relative overflow-x-hidden text-slate-100 selection:bg-rose-500/20 selection:text-rose-300">
       {/* Decorative background grid and ambient lighting */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
       
@@ -70,7 +77,8 @@ const AppLayout: React.FC = () => {
 
       {/*Modifications here*/}
       {/* Header */}
-      <header className="relative z-10 border-b border-slate-900 bg-slate-950/80 backdrop-blur-md px-6 py-4">
+      {/* <header className="relative z-10 border-b border-slate-900 bg-slate-950/80 backdrop-blur-md px-6 py-4"> */}
+      <header className="relative z-10 border-b border-slate-900 bg-slate-900/80 backdrop-blur-md px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="p-2 bg-rose-500/10 rounded-lg border border-rose-500/20 text-rose-500">
@@ -123,7 +131,8 @@ const AppLayout: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-slate-900 bg-slate-950/80 backdrop-blur-md px-6 py-5 text-center text-xs text-slate-500">
+      {/* <footer className="relative z-10 border-t border-slate-900 bg-slate-950/80 backdrop-blur-md px-6 py-5 text-center text-xs text-slate-500"> */}
+      <footer className="relative z-10 border-t border-slate-900 bg-slate-900/80 backdrop-blur-md px-6 py-5 text-center text-xs text-slate-500">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-1.5 text-slate-400">
             <HardDrive className="w-4 h-4 text-rose-500" />
